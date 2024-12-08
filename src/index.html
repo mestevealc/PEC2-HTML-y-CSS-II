@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>Jornadas de Seguridad Informática</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <picture>
+          <source
+            srcset="./assets/images/logo.png?as=webp&width=350"
+            type="image/webp"
+          />
+          <img
+            src="./assets/images/logo.png?width=350"
+            alt="Universitat Oberta de Catalunya"
+            class="uoc-logo"
+          />
+        </picture>
+        <ul>
+          <li><a href="participantes.html">Participantes</a></li>
+          <li><a href="info.html">Información</a></li>
+          <li><a href="extra.html">Extra</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="grid-container">
+      <section class="poster">
+        <div class="imagen-portada">
+          <img src="./assets/images/portada.png" alt="Seguridad Informática" />
+        </div>
+        <h1 class="main-title">Jornadas de Seguridad Informática</h1>
+        <p class="description">
+          Únete al evento donde los expertos en ciberseguridad comparten sus
+          conocimientos y experiencias.
+        </p>
+        <a href="info.html" class="cta-button">Más Información</a>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

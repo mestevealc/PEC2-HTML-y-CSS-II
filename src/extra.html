@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Extra</title>
+    <link rel="stylesheet" href="./assets/styles/main.scss" />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="navigation">
+        <picture>
+          <source
+            srcset="./assets/images/logo.png?as=webp&width=350"
+            type="image/webp"
+          />
+          <img
+            src="./assets/images/logo.png?width=350"
+            alt="Universitat Oberta de Catalunya"
+            class="uoc-logo"
+          />
+        </picture>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="participantes.html">Participantes</a></li>
+          <li><a href="info.html">Información</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="photo-gallery">
+      <h1>Galería de fotos interactiva</h1>
+      <div class="gallery-grid">
+        <img src="./assets/images/galeria1.png" alt="Imagen 1" />
+        <img src="./assets/images/galeria2.png" alt="Imagen 2" />
+        <img src="./assets/images/galeria3.png" alt="Imagen 3" />
+        <img src="./assets/images/galeria4.png" alt="Imagen 4" />
+        <img src="./assets/images/galeria5.png" alt="Imagen 5" />
+        <img src="./assets/images/galeria6.png" alt="Imagen 6" />
+      </div>
+
+      <div class="modal" id="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modal-img" />
+      </div>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+  </body>
+</html>
