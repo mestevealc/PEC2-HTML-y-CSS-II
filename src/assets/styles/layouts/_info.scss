@@ -1,63 +1,138 @@
-.blog-article {
-  padding: 2rem;
+@use "sass:math";
 
-  .article {
-    text-align: center;
-    margin-bottom: 2rem;
+@layer reset {
+  * {
+    box-sizing: border-box;
+  }
+  body,
+  h1,
+  h2,
+  p,
+  ul,
+  li,
+  figure,
+  figcaption,
+  blockquote {
+    margin: 0;
+    padding: 0;
+  }
+  ul {
+    list-style: none;
+  }
+}
 
-    h1 {
-      font-size: 2.5rem;
-      color: #007bff;
+@layer base {
+  body {
+    font-family: sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    color: #333;
+  }
+
+  .header {
+    background: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+
+    .navigation ul {
+      display: flex;
+      gap: 1rem;
+      li a {
+        text-decoration: none;
+        color: #007bff;
+      }
     }
+  }
 
-    .author {
-      font-size: 1rem;
-      color: #6c757d;
-      font-style: italic;
+  .blog-article {
+    padding: 2rem;
+
+    .article {
+      margin-bottom: 2rem;
+      text-align: center;
+
+      h1 {
+        font-family: $font-family-sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: $uoc-corporate;
+      }
+
+      .author {
+        font-style: italic;
+        color: #555;
+        margin-top: 0.5rem;
+      }
     }
   }
 
   .content {
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+    text-align: justify;
+
     h2 {
+      margin-bottom: 1rem;
       font-size: 1.5rem;
-      margin-top: 2rem;
-      color: #333;
     }
 
     p {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: #555;
       margin-bottom: 1rem;
+      color: #444;
     }
 
     ul {
-      list-style: decimal inside;
-      margin: 1rem 0;
-      padding: 0;
-
+      margin-bottom: 1rem;
       li {
         margin-bottom: 0.5rem;
-        font-size: 1rem;
       }
     }
 
     figure {
-      text-align: center;
       margin: 2rem 0;
+      text-align: center;
 
       img {
-        max-width: 30em;
+        max-width: 100%;
         height: auto;
-        border: 1px solid #ddd;
-        border-radius: 8px;
       }
+    }
 
-      figcaption {
-        font-size: 0.9rem;
-        color: #6c757d;
-        margin-top: 0.5rem;
-      }
+    blockquote {
+      border-left: 4px solid #007bff;
+      padding-left: 1rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: #333;
+    }
+
+    .content:has(blockquote) {
+      background: #eef5ff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+    }
+
+    .content :is(h2, h3, h4) {
+      color: #0056b3;
+    }
+  }
+}
+
+@layer layout {
+  @container article-container (min-width: 600px) {
+    .content {
+      font-size: 18px;
+      text-align: justify;
+    }
+  }
+
+  @container article-container (min-width: 900px) {
+    .content {
+      font-size: 20px;
+      text-align: justify;
     }
   }
 }
