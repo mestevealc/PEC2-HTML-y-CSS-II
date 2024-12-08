@@ -121,6 +121,7 @@ body {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    flex-wrap: wrap;
 
     nav {
       flex-grow: 1;
@@ -132,6 +133,12 @@ body {
         list-style: none;
         padding: 0;
         margin: 0;
+
+        @media (max-width: 600px) {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
 
         li {
           margin: 0 1rem;
@@ -152,15 +159,30 @@ body {
     .social-icons {
       display: flex;
       gap: 1rem;
+      margin-top: 1rem;
 
       a {
         font-size: 1.5rem;
-        color: #333;
+        color: #007bff;
 
         &:hover {
           color: #007bff;
         }
       }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .uoc-footer {
+    flex-direction: column;
+    align-items: center;
+
+    .footer-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
     }
   }
 }
